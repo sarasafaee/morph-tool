@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="windowTitle">
+   <string>Morphological Tool</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QFormLayout" name="formLayout">
+      <item row="0" column="0">
+        <widget class="QLabel" name="labelWord">
+          <property name="text"><string>Word:</string></property>
+        </widget>
+      </item>
+      <item row="0" column="1">
+        <widget class="QLineEdit" name="lineEditWord"/>
+      </item>
+
+      <item row="1" column="0">
+        <widget class="QLabel" name="labelCandidates">
+          <property name="text"><string>Candidates:</string></property>
+        </widget>
+      </item>
+      <item row="1" column="1">
+        <widget class="QListWidget" name="listWidgetCandidates"/>
+      </item>
+
+      <item row="2" column="0" colspan="2">
+        <layout class="QHBoxLayout" name="horizontalLayoutAddRemove">
+          <item>
+            <widget class="QPushButton" name="buttonAddCandidate">
+              <property name="text"><string>Add</string></property>
+            </widget>
+          </item>
+          <item>
+            <widget class="QPushButton" name="buttonRemoveCandidate">
+              <property name="text"><string>Remove</string></property>
+            </widget>
+          </item>
+        </layout>
+      </item>
+     </layout>
+    </item>
+
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayoutParams">
+      <item>
+        <widget class="QLabel" name="labelAlpha">
+          <property name="text"><string>Alpha:</string></property>
+        </widget>
+      </item>
+      <item>
+        <widget class="QSlider" name="sliderAlpha">
+          <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+          </property>
+        </widget>
+      </item>
+      <item>
+        <widget class="QLabel" name="labelMethod">
+          <property name="text"><string>Method:</string></property>
+        </widget>
+      </item>
+      <item>
+        <widget class="QComboBox" name="comboBoxMethod">
+          <item>
+            <property name="text"><string>levenshtein</string></property>
+          </item>
+          <item>
+            <property name="text"><string>phonetic</string></property>
+          </item>
+        </widget>
+      </item>
+     </layout>
+    </item>
+
+    <item>
+      <widget class="QPushButton" name="buttonClassify">
+        <property name="text"><string>Classify</string></property>
+      </widget>
+    </item>
+
+    <item>
+      <widget class="QTableView" name="tableViewResults"/>
+    </item>
+
+    <item>
+      <widget class="QWidget" name="widgetChart"/>
+    </item>
+
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayoutReport">
+      <item>
+        <widget class="QPushButton" name="buttonExportHTML">
+          <property name="text"><string>Export HTML</string></property>
+        </widget>
+      </item>
+      <item>
+        <widget class="QPushButton" name="buttonExportPDF">
+          <property name="text"><string>Export PDF</string></property>
+        </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar"/>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
