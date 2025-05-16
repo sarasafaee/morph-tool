@@ -2,9 +2,11 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
   pull_request:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
   test:
@@ -14,17 +16,21 @@ jobs:
         python-version: ['3.8', '3.9', '3.10', '3.11']
     steps:
       - uses: actions/checkout@v3
+
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements-dev.txt
+
       - name: Run tests with coverage
         run: |
-          pytest --maxfail=1 --disable-warnings -q --cov=.
+          pytest --maxfail=1 --disable-warnings -q --cov=. --cov-report=xml
+
       - name: Upload coverage report
         uses: actions/upload-artifact@v3
         with:
@@ -36,33 +42,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
       - name: Set up Python 3.9
         uses: actions/setup-python@v4
         with:
-          python-version: 3.9
+          python-version: '3.9'
+
       - name: Install build tool
         run: pip install build
+
       - name: Build distributions
         run: python -m build --sdist --wheel
+
       - name: Upload distributions
         uses: actions/upload-artifact@v3
         with:
           name: dist-artifacts
           path: dist
-  test:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: [3.8, 3.9, 3.10, 3.11]
-    steps:
-      - uses: actions/checkout@v3
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v4
-        with:
-          python-version: ${{ matrix.python-version }}
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements-dev.txt
-      - name: Run tests
-        run: pytest --maxfail=1 --disable-warnings -q
