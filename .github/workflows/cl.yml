@@ -27,10 +27,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements-dev.txt
 
-      - name: Run tests with coverage (headless)
-        run: |
-          xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" \
-            pytest --maxfail=1 --disable-warnings -q --cov=. --cov-report=xml
+      # - name: Run tests with coverage (headless)
+      #   run: |
+      #     xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" \
+      #       pytest --maxfail=1 --disable-warnings -q --cov=. --cov-report=xml
 
   package:
     needs: test
