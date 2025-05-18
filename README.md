@@ -129,7 +129,7 @@ Below are two illustrative examples showing how the GUI works, step by step, usi
 
 ## 2. Example 1 – Levenshtein Similarity
 
-![Levenshtein Example](screenshots/bitten-example.png)
+<img src="screenshots/bitten-example.png" width="50%" alt="Levenshtein Example">
 
 - **Base word**: `bitten`  
 - **Candidates**: `kitten`, `sitting`  
@@ -142,7 +142,7 @@ The tool displays those scores in the results table and selects **`kitten`** as 
 
 ## 3. Example 2 – Phonetic (Soundex) Similarity
 
-![Phonetic Example](screenshots/robert-example.png)
+<img src="screenshots/robert-example.png" width="50%" alt="phonetic Example">
 
 - **Base word**: `Robert`  
 - **Candidates**: `Rubert`, `Rupert`  
