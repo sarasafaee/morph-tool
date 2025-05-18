@@ -13,7 +13,7 @@ cd morph-tool
 python3 -m venv venv
 source venv/bin/activate      # or `venv\Scripts\activate` on Windows
 pip install -r requirements-dev.txt
-
+```
 ## Similarity Module (`backend/similarity.py`)
 
 The **Similarity** component provides a simple, yet flexible way to quantify “closeness” between any two strings. Currently it supports:
