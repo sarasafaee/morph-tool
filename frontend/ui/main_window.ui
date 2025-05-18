@@ -7,103 +7,113 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
+    <!-- removed contentsMargins property entirely -->
+    <property name="spacing">
+     <number>15</number>
+    </property>
+
+    <!-- Word input -->
     <item>
-     <layout class="QFormLayout" name="formLayout">
-      <item row="0" column="0">
-        <widget class="QLabel" name="labelWord">
-          <property name="text"><string>Word:</string></property>
-        </widget>
+     <layout class="QHBoxLayout" name="wordLayout">
+      <property name="spacing"><number>12</number></property>
+      <item>
+       <widget class="QLabel" name="labelWord">
+        <property name="text"><string>Word:</string></property>
+       </widget>
       </item>
-      <item row="0" column="1">
-        <widget class="QLineEdit" name="lineEditWord"/>
-      </item>
-
-      <item row="1" column="0">
-        <widget class="QLabel" name="labelCandidates">
-          <property name="text"><string>Candidates:</string></property>
-        </widget>
-      </item>
-      <item row="1" column="1">
-        <widget class="QListWidget" name="listWidgetCandidates"/>
-      </item>
-
-      <item row="2" column="0" colspan="2">
-        <layout class="QHBoxLayout" name="horizontalLayoutAddRemove">
-          <item>
-            <widget class="QPushButton" name="buttonAddCandidate">
-              <property name="text"><string>Add</string></property>
-            </widget>
-          </item>
-          <item>
-            <widget class="QPushButton" name="buttonRemoveCandidate">
-              <property name="text"><string>Remove</string></property>
-            </widget>
-          </item>
-        </layout>
+      <item>
+       <widget class="QLineEdit" name="lineEditWord"/>
       </item>
      </layout>
     </item>
 
+    <!-- Candidates list -->
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayoutParams">
+     <widget class="QListWidget" name="listWidgetCandidates"/>
+    </item>
+    <!-- Add/Remove buttons -->
+    <item>
+     <layout class="QHBoxLayout" name="candButtons">
+      <property name="spacing"><number>12</number></property>
       <item>
-        <widget class="QLabel" name="labelAlpha">
-          <property name="text"><string>Alpha:</string></property>
-        </widget>
+       <widget class="QPushButton" name="buttonAddCandidate">
+        <property name="text"><string>Add</string></property>
+       </widget>
       </item>
       <item>
-        <widget class="QSlider" name="sliderAlpha">
-          <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-          </property>
-        </widget>
-      </item>
-      <item>
-        <widget class="QLabel" name="labelMethod">
-          <property name="text"><string>Method:</string></property>
-        </widget>
-      </item>
-      <item>
-        <widget class="QComboBox" name="comboBoxMethod">
-          <item>
-            <property name="text"><string>levenshtein</string></property>
-          </item>
-          <item>
-            <property name="text"><string>phonetic</string></property>
-          </item>
-        </widget>
+       <widget class="QPushButton" name="buttonRemoveCandidate">
+        <property name="text"><string>Remove</string></property>
+       </widget>
       </item>
      </layout>
     </item>
 
+    <!-- Parameters (Alpha + Method) -->
     <item>
-      <widget class="QPushButton" name="buttonClassify">
-        <property name="text"><string>Classify</string></property>
-      </widget>
-    </item>
-
-    <item>
-      <widget class="QTableView" name="tableViewResults"/>
-    </item>
-
-    <item>
-      <widget class="QWidget" name="widgetChart"/>
-    </item>
-
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayoutReport">
+     <layout class="QHBoxLayout" name="paramLayout">
+      <property name="spacing"><number>16</number></property>
       <item>
-        <widget class="QPushButton" name="buttonExportHTML">
-          <property name="text"><string>Export HTML</string></property>
-        </widget>
+       <widget class="QLabel" name="labelAlpha">
+        <property name="text"><string>Alpha:</string></property>
+       </widget>
       </item>
       <item>
-        <widget class="QPushButton" name="buttonExportPDF">
-          <property name="text"><string>Export PDF</string></property>
-        </widget>
+       <widget class="QLabel" name="labelAlphaValue">
+        <property name="text"><string>0.00</string></property>
+        <property name="minimumSize">
+         <size><width>40</width><height>0</height></size>
+        </property>
+        <property name="alignment"><set>Qt::AlignCenter</set></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSlider" name="sliderAlpha">
+        <property name="orientation"><enum>Qt::Horizontal</enum></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="labelMethod">
+        <property name="text"><string>Method:</string></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="comboBoxMethod">
+        <item><property name="text"><string>levenshtein</string></property></item>
+        <item><property name="text"><string>phonetic</string></property></item>
+       </widget>
       </item>
      </layout>
     </item>
+
+    <!-- Classify button -->
+    <item>
+     <widget class="QPushButton" name="buttonClassify">
+      <property name="text"><string>Classify</string></property>
+     </widget>
+    </item>
+
+    <!-- Results table -->
+    <item>
+     <widget class="QTableView" name="tableViewResults"/>
+    </item>
+
+    <!-- Export buttons -->
+    <item>
+     <layout class="QHBoxLayout" name="exportLayout">
+      <property name="spacing"><number>12</number></property>
+      <item>
+       <widget class="QPushButton" name="buttonExportHTML">
+        <property name="text"><string>Export HTML</string></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="buttonExportPDF">
+        <property name="text"><string>Export PDF</string></property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar"/>

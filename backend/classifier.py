@@ -46,6 +46,5 @@ def classify_word(
         sim = calculate_similarity(word, cand, method=method)
         scores[cand] = alpha * sim
 
-    # pick the candidate with the highest score
     best = max(scores, key=scores.get)
     return {"scores": scores, "best": best}

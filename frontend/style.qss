@@ -1,0 +1,86 @@
+
+QWidget {
+  background-color: #fafafa;           /* very light grey */
+  font-family: "Segoe UI", sans-serif;
+  font-size: 11pt;
+}
+
+QGroupBox {
+  border: 2px solid #1890ff;           /* bright blue */
+  border-radius: 6px;
+  margin-top: 12px;
+  padding: 10px;
+}
+
+QPushButton {
+  background-color: #fff1f0;           /* pale red */
+  color: #a8071a;                      /* dark red text */
+  border: 1px solid #ff4d4f;           /* red border */
+  border-radius: 4px;
+  padding: 8px 14px;
+}
+QPushButton:hover {
+  background-color: #ffa39e;           /* salmon */
+}
+QPushButton:pressed {
+  background-color: #ff7875;           /* deeper red */
+}
+
+QSlider::handle:horizontal {
+  background: #ff4d4f;
+  width: 14px;
+  margin: -4px;
+  border-radius: 7px;
+}
+
+
+QTableView {
+  border: 1px solid #d9d9d9;
+  background-color: #ffffff;
+  gridline-color: #e0e0e0;
+  selection-background-color: #ff4d4f;   /* red highlight */
+  selection-color: #ffffff;
+  font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+  font-size: 10pt;
+}
+
+QTableView::item:!selected:alternate {
+  background-color: #f9f9fc;
+}
+
+QTableView {
+  alternate-background-color: #1890ff;
+  show-decoration-selected: 1;
+}
+
+QHeaderView::section {
+  background-color: #1890ff;          /* blue header */
+  color: black;
+  padding: 4px;
+  border: none;
+  font-weight: solid;
+}
+
+QTableView QTableCornerButton::section,
+QHeaderView::section:vertical {
+  background-color: #f0f0f0;
+  border: none;
+}
+
+QTableView {
+  gridline-color: #e0e0e0;
+}
+
+QListWidget {
+  border: 1px solid #d9d9d9;
+  padding: 4px;
+}
+QListWidget::item {
+  border-bottom: 1px solid #d9d9d9;
+  padding: 6px 8px;    /* give some vertical breathing room */
+}
+
+QListWidget::item:selected {
+  background: #1890ff;
+  color: #ffffff;
+}
