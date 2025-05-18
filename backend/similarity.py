@@ -1,10 +1,3 @@
-# backend/similarity.py
-
-"""
-Module: similarity
-Provides functions to compute string (Levenshtein) and simple phonetic (Soundex) similarity.
-"""
-
 def calculate_similarity(a: str, b: str, method: str = 'levenshtein') -> float:
     """
     Compute a similarity score between strings a and b.

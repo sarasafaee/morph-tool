@@ -1,5 +1,3 @@
-# frontend/controllers/main_controller.py
-
 import os
 import tempfile
 

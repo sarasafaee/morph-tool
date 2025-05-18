@@ -1,4 +1,3 @@
-# setup.py
 from setuptools import setup, find_packages
 
 setup(
@@ -17,7 +16,6 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            # After installation, users can just run `morph-tool`
             'morph-tool = run_app:main',
         ],
     },

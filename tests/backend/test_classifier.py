@@ -1,4 +1,3 @@
-# tests/backend/test_classifier.py
 
 import pytest
 from backend.classifier import classify_word

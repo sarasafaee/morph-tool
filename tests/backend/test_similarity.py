@@ -1,5 +1,3 @@
-# tests/backend/test_similarity.py
-
 import pytest
 from backend.similarity import calculate_similarity, _soundex
 

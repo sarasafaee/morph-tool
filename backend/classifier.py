@@ -1,11 +1,4 @@
-# backend/classifier.py
 
-"""
-Module: classifier
-Implements a basic analogy-based affix selection:
-  score(candidate) = alpha * similarity(word, candidate)
-Returns both the per-candidate scores and the best choice.
-"""
 
 from typing import List, Dict
 from backend.similarity import calculate_similarity

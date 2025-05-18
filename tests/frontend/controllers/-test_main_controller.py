@@ -1,5 +1,3 @@
-# tests/frontend/controllers/test_main_controller.py
-
 import os
 import tempfile
 import pytest
@@ -13,9 +11,6 @@ from frontend.controllers.main_controller import MainController
 
 @pytest.fixture
 def controller(qtbot, tmp_path, monkeypatch):
-    """
-    Instantiate MainController and patch dialog methods and backends.
-    """
     w = MainController()
     qtbot.addWidget(w)
     w.show()
